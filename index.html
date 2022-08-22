@@ -2,32 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code Quiz</title>
-  <style>
-    * {
-      user-select: none;
-    }
-  </style>
+  <title>TedMS Code Quiz</title>
+  <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
-<body>
-  <section id="start">
-    <h2>Start Quiz</h2>
-    <button>Begin</button>
-  </section>
-  <section id="quiz">
-    <h2 id="title">Questions</h2>
-    <div id="questions">
 
-    </div>
+<body>
+  <section class = "container">
+
+    <section id="startingpage">
+      <h2>Welcome to Ted's first Code Quiz</h2>
+      <h2>Click below to take the Quiz!</h2>
+    <button id = "startbtn">Start this Code Quiz</button>
+    <button id = "startingPageHighscore" onclick = "showHighscore()">High Scores:</button>
+    </section>
+
+    <section id="quiz">
+      <section id="timer">Your remaining time: </section>
+        <section id="questions"><p>Question Placeholder</p></section>
+          <button id = "a" onclick = "checkAnswer('a')">A.</button>
+          <button id = "a" onclick = "checkAnswer('b')">B.</button>
+          <button id = "a" onclick = "checkAnswer('c')">C.</button>
+          <button id = "a" onclick = "checkAnswer('d')">D.</button>
+        <section id = "result"></section>
+    </section>
+    <section id="gamedone">
+
+      <section id = "finalScore"></section>
+      <input type = "text" size = "40" placeholder = "Type your initals to save High Score" name = "initials" id = "initials" />
+      <button id = "submitScore"></button>
+    </section>
+    <section id = "highscoreContainer">
+    <section id = "high-scorePage">
+      <section id = "highscore-header">
+        <h3>Player Initials</h3>
+        <h3>Score</h3>
+      </section>
+      <section id = "highscore-initials"></section>      
+      <section id = "highscore-score"></section>
+    </section>  
+    <section id = "endGameBtns">
+      <button id = "playAgain" onclick = "replayQuiz()">Press to Play Again</button>
+      <button id = "clearHighscore" onclick = "clearScore()">Clear the Highscores</button>
+    </section>
   </section>
-  <section id="end">
-    <h2>Enter Initials</h2>
-    <input type="text" />
-    <button>Submit</button>
   </section>
   <script src="./script.js"></script>
+
 </body>
 </html>
 
