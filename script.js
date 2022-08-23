@@ -71,3 +71,26 @@ var quizQuestions = [ {
     correctAnswer: "c"},
 
 ];
+//Global Variables needed
+var finalQuestionindex = quizQuestions.length;
+var currentQuestionIndex = 0;
+var timeLeft = 100;
+var timerInterval;
+var score = 0;
+var correct;
+
+//Function to cycle through the object array with the quiz questions in order to generate the Q and A
+function generateQuizQuestion(){
+    gamedoneSection.style.display = "none";
+    if (currentQuestionIndex === finalQuestionindex){
+        return showScore();
+    }
+    var currentQuestion = quizQuestions[currentQuestionIndex];
+    questionsEl.innerHTML = "p" + currentQuestion.question + "</p>";
+    buttonA.innerHTML = currentQuestion.choiceA;
+    buttonB.innerHTML = currentQuestion.choiceB;
+    buttonC.innerHTML = currentQuestion.choiceC;
+    buttonD.innerHTML = currentQuestion.choiceD;
+};
+
+//Start quiz function to start the timer, hide the buttons and display the first question on the quiz.
